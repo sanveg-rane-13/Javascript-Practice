@@ -12,14 +12,14 @@ function getHTMLPage(url) {
 
             throw new Error("Invalid status code");
         })
-        .then(response => {
-            // Limited entries because response.type is "cors"
-            for (var entry of response.headers.entries()) {
-                console.log(entry[0] + " -> " + entry[1]);
-            }
+        // .then(response => {
+        //     // Limited entries because response.type is "cors"
+        //     for (var entry of response.headers.entries()) {
+        //         console.log(entry[0] + " -> " + entry[1]);
+        //     }
 
-            return response;
-        })
+        //     return response;
+        // })
         .then(response => response.text())
         .then(response => console.log(response) || response)
         .catch(error => console.error(error));

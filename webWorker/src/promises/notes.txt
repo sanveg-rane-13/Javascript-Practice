@@ -1,0 +1,37 @@
+Promise is an object that has a function on its "then" property.
+
+promise.then(responseHandler, errorHandler, progressHandler).
+
+Promise/A+ specification:
+-------------------------
+
+A promise represents the eventual result of an asynchronous operation. The primary way of interacting with a promise is through its then method, which registers callbacks to receive either a promise’s eventual value or the reason why the promise cannot be fulfilled.
+
+-> Promise is an object with then method whoes behavior conforms to promise/A+ specification
+-> Thenable is an object or function that defines a then method.
+
+Promise states: 
+1. Pending -> may transition to Fulfilled or Rejected state.
+2. Fulfilled -> must not transition to other state.
+             -> must have immutable value.
+3. Rejected -> must not transition to other state.
+            -> must have immutable reason.
+
+promise.then(onFulfilled, onRejected)
+
+HTTP(Ajax) calls return a promise having then property
+
+onFulfilled callback -> return another promise/ return a value/ throw an error.
+
+promise.all([]).then(allFulfilled, firstRejected) -> list of promises (thenables)
+promise.race([]).then(firstFulfilled, firstRejected) -> any one executed first.
+
+-> Promises are generally created from APIs:
+    Battery
+    StorageQuota
+    Font Loading
+    Web MIDI
+    Streams
+    Fetch
+    ServiceWorker
+    Cache

@@ -1,0 +1,72 @@
+Javascript:
+-----------
+
+- Syntax Parser: Checks if grammar valid. Translates JS code for compiler
+
+- Execution Context: Wrapper to help manage code that is running. Currently running lexical environment is managed via execution context.
+- Object: collection of nave value pairs.
+- Global Environment and Global object (window for browser)
+
+- Creation phase:
+    -> Ceration of context.
+    -> Hoisting: Setup memory space for functions and variables (var).
+
+- Execution phase:
+    -> We have environment setup.
+    -> Runs code line by line.
+
+- Synchronous: one at a time (single execution)
+
+- Scope: where a variable is available in the code.
+
+- Execution stack: 
+    -> Invocation: calling a function/ done using ()
+    -> Every function creates new execution context (content and memory value)
+    -> New EC creates its new scope
+
+- Scope Chain:
+    -> Reference to outer environment always. (outer lexical environment)
+    -> Can't find a variable searches lexically outer environment 
+
+========
+- ES 6:
+========
+-> Block scoping:
+        - let: declare variable. Won't allow using a variable till it is declared.
+        - block: defined by curly braces
+
+-> Asynchonous: more than one execution at one time.
+        - Event Queue: Asynchonous functions calls
+        - Once Execution Stack is empty, gets next execution from event queue.
+
+-> Types: 
+        - Dynamic typing: JS engine not informed what type of data the variable will hold.
+        - Variables can hold different types of data during compiling
+
+        - Types in JS: 
+                undefined: lack of existence (never set to undefined)
+                null: lack of existence (defined as null)
+                boolean: true/ false
+                number: always floating point number
+                string: sequence of characters ('' / "")
+                symbol: (only in ES6) creates unique symbol for data
+
+        - Operators: special function that is syntactically different.
+                takes two params and outputs result.
+                ( + - * / % > < == <= >=) -> infix notation, operator between parameters (prefix/ infix/ postfix)
+
+        - Coercion: converting value from one type to other
+                Occurs in java as it is dynamically typed.
+                Boolean -> Number -> String
+                Number(null) -> 0 / Number(undefined) -> NaN
+                NaN => not a number due to incorrect coercion
+
+        - Falsy values: ( == / === / != / !== )
+                null/ undefined/ ""/ false/ 0/ []
+                Strict equality (===) checks equality without coercing the values
+                Object.is in later version of JS
+
+-> Objects and Functions:
+        - Object: name value pairs
+        - Object can have properties and methods
+        - [] / . operators for accessing object properties

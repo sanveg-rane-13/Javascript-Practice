@@ -1,0 +1,38 @@
+- Fetch API is modern, in build api for http requests. 
+- Built on promises
+- A living standard
+- Available on browser(window) and service worker(worker) objects
+
+- Maintained by Web Hypertext Application Technology Working Group (WHATWG)
+https://fetch.spec.whatwg.org/
+
+http://httpbin.org/
+
+--------------------------------
+Syntax: 
+
+fetch(URL);
+.then(response => { response.ok })
+.then(response => response.json())
+.catch(error);
+
+--------------------------------
+Components of Fetch:
+1. requests
+-> URL/ Method/ Header/ Body/ Context/ 
+   Referrer/ Mode(origin of request)/ Credentials/ Redirect/ Integrity/ Cache
+
+2. response
+-> URL/ Header/ Body/ Status/ StatusText/
+   Ok/ Type/ Redirected/ UseFinalURL
+
+3. headers
+-> append() (add new values) / set() (replace a value) / delete() / 
+   get() / getAll() / has() / entries() / keys() / values()
+
+4. body
+-> arrayBuffer() / blob() / formData() / json() / text()  <- these functions can be called only once on body
+   bodyUsed / request.clone() / response.clone()
+    
+
+
